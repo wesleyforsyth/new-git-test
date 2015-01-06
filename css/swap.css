@@ -1,0 +1,36 @@
+.images {
+    width: 48%;
+    float: left;
+    margin-bottom: $baseline*2;
+}
+
+.woocommerce-main-image img{
+  width: 78%;
+    float: right;
+    margin-right: 0;
+  }
+
+
+.thumbnails {
+  width: 20%;
+  float: left;
+}
+
+.thumbnails > a {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  margin-bottom: 12%;
+  padding-top: 124.6%;
+}
+
+
+.thumbnails img {
+  width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
+}

@@ -1,0 +1,476 @@
+
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body
+	{
+		line-height: 2.25em;
+	}
+
+	h2
+	{
+		font-size: 2.25em;
+		margin: 0 0 1.1em 0;
+		line-height: 1em;
+	}
+	
+	h3
+	{
+		font-size: 1.35em;
+		margin: 0 0 1em 0;
+	}
+	
+	/* Button */
+
+		input[type="button"],
+		input[type="submit"],
+		input[type="reset"],
+		.button
+		{
+			font-size: 1.35em;
+			padding: 0.4em 1.5em;
+		}
+
+			input[type="button"].big,
+			input[type="submit"].big,
+			input[type="reset"].big,
+			.button.big
+			{
+				font-size: 2.25em;
+				padding: 0.8em 0.9em;
+			}
+
+			.button.icon
+			{
+			}
+
+				.button.icon:before
+				{
+					margin-right: 0.5em;
+					top: 0.05em;
+				}
+
+	/* Box */	
+	
+		.box
+		{
+			padding: 2em;
+		}
+			
+			.box.feature
+			{
+				padding: 0;
+			}
+				
+				.box.feature .inner
+				{
+					padding: 4em 2em 3em 2em;
+				}
+				
+				.box.feature h2
+				{
+					font-size: 1.35em;
+				}
+
+				.box.feature p
+				{
+					margin: 0;
+				}
+
+				.box.feature .image
+				{
+					position: relative;
+					margin: 0;
+				}
+
+					.box.feature .image img
+					{
+						border-bottom-left-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+
+/*********************************************************************************/
+/* Widgets                                                                       */
+/*********************************************************************************/
+
+	.widget
+	{
+	}
+
+		.widget.thumbnails
+		{
+		}
+
+			.widget.thumbnails .grid
+			{
+				margin: 0 0 3em 0;
+			}
+
+			.widget.thumbnails .image
+			{
+				margin: 0;
+			}
+	
+/*********************************************************************************/
+/* Wrappers                                                                      */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		width:100%;
+	}
+	
+	#features-wrapper
+	{
+		padding: 3em 0 3em 0;
+	}
+	
+	#main-wrapper
+	{
+		padding: 2em 11em 3em 3em;
+	}
+	
+	#footer-wrapper
+	{
+		padding: 6em 0 8em 0;
+	}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo
+	{
+background-color: #a09853;
+height: 36px;
+
+	}
+
+		#logo h1
+		{
+			float: left;
+			margin: 0 0.35em 0 0;
+			padding: 0.25em 0.2em 0.25em 0.2em;
+			font-size: 3.25em;
+			letter-spacing: 0.05em;
+		}
+
+		#logo span
+		{
+			line-height: 4.5em;
+			letter-spacing: 0.025em;
+			font-size: 0.9em;
+		}
+
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+
+	#nav
+	{
+	position: absolute;
+right: 559px;
+top: 40px;
+font-size: 13px;
+font-family: 'Terminal Dosis', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	#navsocial{
+
+position: absolute;
+right: 200px;
+top: 25px;
+
+
+	}
+		#nav ul
+		{
+		}
+			
+			#nav ul li
+			{
+				float: left;
+				line-height: 4.5em;
+				padding-left: 1.5em;
+			}
+
+				#nav ul li a,
+				#nav ul li span
+				{
+					font-weight: 100;
+
+					font-family: 'Terminal Dosis', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+					letter-spacing: 0.025em;
+					color: #a09853;
+					text-decoration: none;
+					border-radius: 6px;
+					padding: 0.5em 1em 0.5em 1em;
+					-moz-transition: background-color .25s ease-in-out;
+					-webkit-transition: background-color .25s ease-in-out;
+					-o-transition: background-color .25s ease-in-out;
+					-ms-transition: background-color .25s ease-in-out;
+					transition: background-color .25s ease-in-out;
+				}
+				
+				#nav ul li > ul
+				{
+					display: none;
+				}
+
+			#nav ul li:hover
+			{
+			}
+
+				#nav ul li:hover a,
+				#nav ul li:hover span
+				{
+				
+				}
+
+			#nav ul li.active
+			{
+			}
+
+				#nav ul li.active a,
+				#nav ul li.active span
+				{
+				
+				}
+
+			#nav ul li.current
+			{
+			}
+
+				#nav ul li.current a
+				{
+					background: #444;
+					color: #fff;
+				}
+				
+	.dropotron
+	{
+		background: #fff;
+		letter-spacing: 0.025em;
+		color: #696969;
+		text-decoration: none;
+		opacity: 0;
+		padding: 0.75em 0;
+		min-width: 15em;
+		
+		margin-top: calc(-0.75em + 1px);
+		margin-left: -1px;
+	}
+
+		.dropotron li
+		{
+			border-top: solid 1px #eee;
+			line-height: 3em;
+		}
+
+			.dropotron li:first-child
+			{
+				border-top: 0;
+			}
+	
+			.dropotron li > a,
+			.dropotron li > span
+			{
+				text-decoration: none;
+				color: inherit;
+				display: block;
+				padding: 0 1.5em;
+				-moz-transition: color .25s ease-in-out, background-color .25s ease-in-out;
+				-webkit-transition: color .25s ease-in-out, background-color .25s ease-in-out;
+				-o-transition: color .25s ease-in-out, background-color .25s ease-in-out;
+				-ms-transition: color .25s ease-in-out, background-color .25s ease-in-out;
+				transition: color .25s ease-in-out, background-color .25s ease-in-out;
+			}
+
+				.dropotron li > a:hover,
+				.dropotron li > span:hover,
+				.dropotron li.active > a,
+				.dropotron li.active > span
+				{
+					background: #eee;
+				}
+	
+		.dropotron.level-0
+		{
+			font-size: 0.8em;
+			margin-left: 1.5em;
+			margin-top: 0;
+		}
+		
+			.dropotron.level-0:before
+			{
+			
+				position: absolute;
+				top: -0.5em;
+				left: 1em;
+				border-bottom: solid 0.75em #ffffff;
+				border-left: solid 0.75em transparent;
+				border-right: solid 0.75em transparent;
+				z-index: 1;
+			}
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+
+#banner-wrapper
+	{
+		 padding-top: 39px; 
+		 box-shadow: 0px -10px 30px 0px rgba(180, 160, 145, 0.2);
+	}
+
+
+
+
+
+
+
+	#banner
+	{
+
+	}
+
+		#banner h2
+		{
+			font-size: 3.5em;
+			margin: 0.1em 0 0.35em 0;
+		}
+
+		#banner p
+		{
+			font-size: 2.75em;
+			line-height: 1.35em;
+			margin: 0;
+		}
+		
+		#banner .button
+		{
+			width: 100%;
+			margin-bottom: 0.5em;
+		}
+		
+			#banner .button.icon:before
+			{
+				position: absolute;
+				right: 0.15em;
+				top: 50%;
+				margin-top: -0.5em;
+			}
+
+		#banner .button.alt
+		{
+			margin-bottom: 0;
+		}
+		
+		#banner ul
+		{
+			
+		}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+	#footer{
+
+position: relative;
+margin-top: 734px;
+width: 2000px;
+height: 200px;
+background-color: white;
+box-shadow: 0px -10px 30px 0px rgba(180, 160, 145, 0.2);
+
+}
+
+
+
+
+	#footerproduct{
+
+position: relative;
+
+width: 2000px;
+height: 200px;
+background-color: white;
+box-shadow: 0px -10px 30px 0px rgba(180, 160, 145, 0.2);
+
+}
+
+
+
+
+
+#gold{
+
+background-color: #a09853;
+margin-top: -39px;
+
+
+}
+
+
+#gold2{
+background-color: #a09853;
+margin-top: -136px;
+margin-left: -31px;
+height: 39px;
+width: 1602px;
+}
+
+#title{
+color: white;
+margin-left: 10px;
+margin-top: -36px;
+font-size: 12px;
+}
+#title2{
+	color: white;
+margin-left: 259px;
+margin-top: -39px;
+}
+#title3{
+	color: white;
+margin-left: 227px;
+margin-top: -39px;
+}
+
+#title4{
+color: white;
+margin-left: 45px;
+margin-top: -36px;
+font-size: 12px;
+}
+
+#title5 {
+color: white;
+margin-left: 18px;
+margin-top: -36px;
+font-size: 12px;
+}
+
+	#copyright
+	{
+		padding: 4em 0 0 0;
+		text-align: center;
+	}
+
+
+	#bread{
+color: black;
+font-size: 12px;
+margin-left: 53px;
+
+}
+
+.pic respond{
+width: 138px;
+height: 64px;
+margin-top: 21px;
+margin-left: 13px;
+}

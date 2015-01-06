@@ -1,0 +1,396 @@
+<#assign hst=JspTaglibs["http://www.hippoecm.org/jsp/hst/core"]>
+<@hst.headContribution keyHint="headDescription" category="metadata">
+<meta name="description" content="Life's uncertain - that's for sure. Get prepared for the ride no matter how smooth or bumpy with our range of tailored personal insurance products."/>
+</@hst.headContribution>
+
+<@hst.headContribution keyHint="headTitle" category="metadata">
+    <#assign metaTitle="Protect The Quality Of Your Life With Personal Insurance | Hollard"/>
+<title>${metaTitle}</title>
+
+</@hst.headContribution>
+
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag: Personal Insurance
+URL of the webpage where the tag is expected to be placed: http://www.hollard.co.za/insurance
+This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+Creation Date: 02/21/2014
+-->
+<script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="http://1165950.fls.doubleclick.net/activityi;src=1165950;type=holla407;cat=Perso-;ord=1;num=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+    <iframe src="http://1165950.fls.doubleclick.net/activityi;src=1165950;type=holla407;cat=Perso-;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+<@hst.headContribution keyHint="pageJS" category="pageJs">
+
+
+
+    <@hst.link var="callBackUrl" path="restapi/callback/callmaster" >
+        <@hst.param name="_type" value="json" />
+    </@hst.link>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+
+
+    /*populate calculator form entries */
+    var formEntriesFuneral;
+    var formEntriesLife;
+
+    //populate funeral entries
+    //****Assuming that the string "Funeral" will be in the id of the containing element
+    //****ToDo: Find a more elegant without using substrings
+
+
+
+
+    var sendCallBack = function(url, params,targetElement,productName) {
+
+        //var productName = "Funeral Insurance";
+        var source = "callback_form";
+        //var productCode = productNameToDartCodeMap[productName];
+
+        var productNameToProductCodeForLeadMap = {
+            'Life Insurance':'PER_LI',
+            'Funeral Insurance':'PER_FI',
+            'Personal Liability':'PER_PL',
+            'Personal All Risks Insurance':'PER_PARI',
+            'Home Insurance':'PER_HOME',
+            'Household Insurance':'PER_HOUSE',
+            'Motor Insurance':'PER_MOTR',
+            'Travel Insurance':'PER_TI',
+            'Third Party For Foreign Vehicles':'PER_TPFFV',
+            'Personal Accident':'PER_PACC'
+
+        }
+
+        //var type = source;
+        var productCode = productNameToProductCodeForLeadMap[productName];
+
+
+
+        if(productCode != undefined){
+            var leadId = Math.round(1000000000 * Math.random() ) + "";
+
+            _gaq.push(['_addTrans',
+                leadId, // order ID Ã¯Â¿Â½ a random ID number needs to be generated and dynamically added
+                document.URL,
+                '0',
+                '',
+                '',
+                '',
+                '',
+                ''
+            ]);
+
+            _gaq.push(['_addItem',
+                leadId, // order ID Ã¯Â¿Â½ Same as _addTrans Submission ID
+                productCode, // needs to be dynamically added
+                productName, // needs to be dynamically added
+                'call-me-back-form',
+                '1',
+                '1'
+            ]);
+
+            _gaq.push(['_trackTrans']); //submits transaction to the Analytics server
+
+        }
+
+        /***************End Track Call Me Backs*************/
+
+
+        //show callback success
+        $(targetElement).closest(".hld-call-me").find("#callback_form_input").hide();
+        $(targetElement).closest(".hld-call-me").find("#callback_form_success").show();
+
+        $.ajax({
+            url: url,
+            data: params,
+            success:
+                    function(data, textStatus, xmlHttp) {
+
+                    }
+        });
+    };
+
+
+
+    /* Normal call back validations (Persona Accident)*/
+    $.validate({
+        form: '#callback_form_funeral-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Funeral Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_life-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Life Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_personal-liability-speech',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Personal Liability";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_personal-all-risk-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Personal All Risks Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_household-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Home Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_car-house-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Household Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_car-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Motor Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_travel-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Travel Insurance";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_third-party-car-insurance',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Third Party For Foreign Vehicles";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+    $.validate({
+        form: '#callback_form_find-advisor',
+        borderColorOnError: '#442359',
+        validateOnBlur: false,
+
+        onError: function () {
+            //alert('Validation failed');
+            return true;
+        },
+        onSuccess: function (e) {
+            var params = $(e).serializeArray();
+            var productName = "Personal Accident";
+            sendCallBack("/restapi/callback/callmaster?_type=json",params,e,productName);
+            return false;
+            return false;
+        }
+
+    });
+
+
+});
+//]]>
+</script>
+</@hst.headContribution>
+
+
+
+<h1>
+    Personal Insurance
+</h1>
+<h2>
+    Life Insurance
+</h2>
+<@hst.link var="lifeLink" path='insurance/life-insurance'/>
+<@hst.link var="funeralLink" path='insurance/funeral-insurance'/>
+<@hst.link var="personalLiabilityLink" path='insurance/personal-liability'/>
+
+
+<nav class="new-nav-personal-insurance icon-align">
+    <ul>
+        <li>
+            <a href="${lifeLink}"><i class="icon--h-life-insurance"></i>Life Insurance</a>
+        </li>
+        <li>
+            <a href="${funeralLink}"><i class="icon--h-funeral-insurance"></i>Funeral Insurance</a>
+        </li>
+        <li>
+            <a href="${personalLiabilityLink}"><i class="icon--h-personal-liability-speech"></i>Personal Liability</a>
+        </li>
+
+
+    </ul>
+</nav>
+
+<article>
+<@hst.include ref="productBars"/>
+</article>
+
+<h2>
+    General Insurance
+</h2>
+<@hst.link var="motorLink" path='insurance/motor-insurance'/>
+<@hst.link var="ComprehensiveLink" path='insurance/comprehensive-car-insurance'/>
+<@hst.link var="personalLink" path='insurance/personal-all-risk-insurance'/>
+<@hst.link var="householdLink" path='insurance/household-insurance'/>
+<@hst.link var="HomeLink" path='insurance/home-insurance'/>
+<@hst.link var="waterLink" path='insurance/water-craft-insurance'/>
+<@hst.link var="travelLink" path='insurance/travel-insurance'/>
+<@hst.link var="thirdPartyLink" path='insurance/third-party-foreign-vehicles'/>
+<@hst.link var="accidentLink" path='insurance/personal-accident-insurance'/>
+<nav class="new-nav-personal-insurance">
+    <ul>
+        <li>
+            <a href="${motorLink}"><i class='icon--h-car-insurance'></i>Motor Insurance</a>
+        </li>
+        <li>
+            <a href="${householdLink}"><i class='icon--h-car-house-insurance'></i>Household Insurance</a>
+        </li>
+        <li>
+            <a href="${HomeLink}"><i class='icon--h-household-insurance'></i>Home Insurance</a>
+        </li>
+        <li>
+            <a href="${personalLink}"><i class='icon--h-personal-all-risk-insurance'></i>Personal All Risk Insurance</a>
+        </li>
+        <li>
+            <a href="${travelLink}"><i class='icon--h-travel-insurance'></i>Travel Insurance</a>
+        </li>
+        <li>
+            <a href="${thirdPartyLink}"><i class='icon--h-third-party-car-insurance'></i>Third Party for  Foreign Vehicles</a>
+        </li>
+        <li>
+            <a href="${accidentLink}"><i class='icon--h-find-advisor'></i>Personal Accident Insurance</a>
+        </li>
+    </ul>
+</nav>
+
+<article>
+<@hst.include ref="productBars2"/>
+</article>
